@@ -1,0 +1,7 @@
+[
+  {"id":"F001","child_grade":"초저","subjects":["국어","수학"],"home_language":"베트남어","slots":["weekday-evening"],"sigungu":"경기 안산시","dong":"원곡동"},
+  {"id":"F002","child_grade":"초고","subjects":["수학","과학"],"home_language":"한국어","slots":["weekend-morning"],"sigungu":"전남 고흥군","dong":"고흥읍"},
+  {"id":"F003","child_grade":"중","subjects":["영어","국어"],"home_language":"중국어","slots":["weekday-afternoon"],"sigungu":"인천 부평구","dong":"부평1동"},
+  {"id":"F004","child_grade":"초저","subjects":["국어"],"home_language":"러시아어","slots":["weekend-afternoon"],"sigungu":"경기 안산시","dong":"선부동"},
+  {"id":"F005","child_grade":"고","subjects":["수학","영어"],"home_language":"필리핀어","slots":["weekend-morning"],"sigungu":"경기 화성시","dong":"향남읍"}
+]

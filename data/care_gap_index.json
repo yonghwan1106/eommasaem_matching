@@ -1,0 +1,43 @@
+{
+  "sido": [
+    {"sido":"서울","multicultural_ratio":3.2,"grandparent_ratio":2.1,"learning_gap":0.6,"mentor_supply":68,"care_gap_index":42},
+    {"sido":"부산","multicultural_ratio":3.8,"grandparent_ratio":3.4,"learning_gap":0.7,"mentor_supply":45,"care_gap_index":58},
+    {"sido":"대구","multicultural_ratio":3.1,"grandparent_ratio":2.9,"learning_gap":0.7,"mentor_supply":42,"care_gap_index":56},
+    {"sido":"인천","multicultural_ratio":4.7,"grandparent_ratio":2.6,"learning_gap":0.8,"mentor_supply":51,"care_gap_index":62},
+    {"sido":"광주","multicultural_ratio":3.0,"grandparent_ratio":2.8,"learning_gap":0.6,"mentor_supply":48,"care_gap_index":51},
+    {"sido":"대전","multicultural_ratio":2.9,"grandparent_ratio":2.4,"learning_gap":0.5,"mentor_supply":55,"care_gap_index":44},
+    {"sido":"울산","multicultural_ratio":4.2,"grandparent_ratio":2.3,"learning_gap":0.6,"mentor_supply":40,"care_gap_index":59},
+    {"sido":"세종","multicultural_ratio":2.4,"grandparent_ratio":1.5,"learning_gap":0.4,"mentor_supply":62,"care_gap_index":31},
+    {"sido":"경기","multicultural_ratio":4.5,"grandparent_ratio":2.8,"learning_gap":0.7,"mentor_supply":58,"care_gap_index":61},
+    {"sido":"강원","multicultural_ratio":4.8,"grandparent_ratio":4.7,"learning_gap":0.9,"mentor_supply":31,"care_gap_index":78},
+    {"sido":"충북","multicultural_ratio":5.1,"grandparent_ratio":4.2,"learning_gap":0.9,"mentor_supply":33,"care_gap_index":75},
+    {"sido":"충남","multicultural_ratio":5.6,"grandparent_ratio":4.4,"learning_gap":1.0,"mentor_supply":34,"care_gap_index":80},
+    {"sido":"전북","multicultural_ratio":5.3,"grandparent_ratio":5.1,"learning_gap":1.0,"mentor_supply":29,"care_gap_index":83},
+    {"sido":"전남","multicultural_ratio":6.2,"grandparent_ratio":5.8,"learning_gap":1.1,"mentor_supply":26,"care_gap_index":88},
+    {"sido":"경북","multicultural_ratio":5.4,"grandparent_ratio":5.2,"learning_gap":1.0,"mentor_supply":28,"care_gap_index":82},
+    {"sido":"경남","multicultural_ratio":4.9,"grandparent_ratio":3.9,"learning_gap":0.8,"mentor_supply":38,"care_gap_index":68},
+    {"sido":"제주","multicultural_ratio":4.6,"grandparent_ratio":3.5,"learning_gap":0.7,"mentor_supply":36,"care_gap_index":65}
+  ],
+  "priority_dong": [
+    {"sido":"전남","sigungu":"신안군","dong":"압해읍","care_gap_index":94,"priority":true},
+    {"sido":"전남","sigungu":"진도군","dong":"진도읍","care_gap_index":92,"priority":true},
+    {"sido":"전북","sigungu":"고창군","dong":"고창읍","care_gap_index":91,"priority":true},
+    {"sido":"경북","sigungu":"의성군","dong":"의성읍","care_gap_index":90,"priority":true},
+    {"sido":"경북","sigungu":"청도군","dong":"화양읍","care_gap_index":89,"priority":true},
+    {"sido":"전남","sigungu":"고흥군","dong":"고흥읍","care_gap_index":88,"priority":true},
+    {"sido":"강원","sigungu":"정선군","dong":"정선읍","care_gap_index":87,"priority":true},
+    {"sido":"충남","sigungu":"청양군","dong":"청양읍","care_gap_index":86,"priority":true},
+    {"sido":"경기","sigungu":"안산시","dong":"원곡동","care_gap_index":85,"priority":true},
+    {"sido":"전북","sigungu":"순창군","dong":"순창읍","care_gap_index":84,"priority":true},
+    {"sido":"경북","sigungu":"영양군","dong":"영양읍","care_gap_index":83,"priority":true},
+    {"sido":"경남","sigungu":"합천군","dong":"합천읍","care_gap_index":82,"priority":true},
+    {"sido":"충북","sigungu":"단양군","dong":"단양읍","care_gap_index":81,"priority":true},
+    {"sido":"강원","sigungu":"평창군","dong":"평창읍","care_gap_index":80,"priority":true},
+    {"sido":"경기","sigungu":"화성시","dong":"향남읍","care_gap_index":79,"priority":true},
+    {"sido":"인천","sigungu":"부평구","dong":"부평1동","care_gap_index":78,"priority":true},
+    {"sido":"경기","sigungu":"김포시","dong":"양촌읍","care_gap_index":77,"priority":true},
+    {"sido":"전남","sigungu":"해남군","dong":"해남읍","care_gap_index":76,"priority":true},
+    {"sido":"경북","sigungu":"안동시","dong":"풍산읍","care_gap_index":75,"priority":true},
+    {"sido":"충남","sigungu":"부여군","dong":"부여읍","care_gap_index":74,"priority":true}
+  ]
+}

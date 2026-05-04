@@ -1,0 +1,101 @@
+@import "tailwindcss";
+
+:root {
+  --color-bg: #faf6ee;
+  --color-surface: #ffffff;
+  --color-primary: #173d33;
+  --color-primary-mid: #2d6e5a;
+  --color-accent: #5fa48e;
+  --color-soft: #fbe5d3;
+  --color-ink: #1a2520;
+  --color-muted: #6b7670;
+  --color-border: #e6decf;
+}
+
+@theme inline {
+  --color-background: var(--color-bg);
+  --color-foreground: var(--color-ink);
+  --color-primary: var(--color-primary);
+  --color-accent: var(--color-accent);
+  --font-sans: 'Pretendard Variable', Pretendard, sans-serif;
+  --font-serif: 'Nanum Myeongjo', 'Gowun Batang', serif;
+}
+
+html, body {
+  background: var(--color-bg);
+  color: var(--color-ink);
+  font-family: 'Pretendard Variable', Pretendard, sans-serif;
+}
+
+h1, h2, h3, .font-serif {
+  font-family: 'Nanum Myeongjo', 'Gowun Batang', serif;
+  letter-spacing: -0.01em;
+}
+
+.btn-primary {
+  background: var(--color-primary);
+  color: #faf6ee;
+  padding: 0.7rem 1.3rem;
+  border-radius: 999px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: background 0.2s;
+}
+.btn-primary:hover { background: var(--color-primary-mid); }
+
+.btn-soft {
+  background: var(--color-soft);
+  color: var(--color-primary);
+  padding: 0.7rem 1.3rem;
+  border-radius: 999px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 18px;
+  padding: 1.4rem;
+}
+
+.input {
+  width: 100%;
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  padding: 0.6rem 0.8rem;
+  background: #fff;
+  font-size: 0.95rem;
+}
+.input:focus {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 1px;
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  background: var(--color-soft);
+  color: var(--color-primary);
+  font-size: 0.78rem;
+  font-weight: 500;
+}
+
+.flower::before {
+  content: '❀';
+  color: var(--color-accent);
+  margin-right: 0.4rem;
+}
+
+@keyframes fadein-up {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-in { animation: fadein-up 0.4s ease-out; }

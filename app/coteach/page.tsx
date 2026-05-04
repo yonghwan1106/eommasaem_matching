@@ -1,6 +1,79 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, type ReactNode } from 'react';
+
+function renderInline(text: string): ReactNode[] {
+  const parts: ReactNode[] = [];
+  const regex = /\*\*([^*]+)\*\*|`([^`]+)`/g;
+  let last = 0;
+  let m: RegExpExecArray | null;
+  let key = 0;
+  while ((m = regex.exec(text)) !== null) {
+    if (m.index > last) parts.push(text.slice(last, m.index));
+    if (m[1] !== undefined) {
+      parts.push(<strong key={key++} className="text-[var(--color-primary)] font-bold">{m[1]}</strong>);
+    } else if (m[2] !== undefined) {
+      parts.push(<code key={key++} className="px-1.5 py-0.5 rounded bg-[var(--color-accent)]/40 text-[var(--color-primary)] text-[0.9em]">{m[2]}</code>);
+    }
+    last = m.index + m[0].length;
+  }
+  if (last < text.length) parts.push(text.slice(last));
+  return parts;
+}
+
+function renderMarkdown(src: string): ReactNode {
+  const lines = src.split('\n');
+  const blocks: ReactNode[] = [];
+  let listBuf: string[] = [];
+  let key = 0;
+  const flushList = () => {
+    if (listBuf.length === 0) return;
+    blocks.push(
+      <ul key={key++} className="list-disc pl-6 my-2 space-y-1">
+        {listBuf.map((it, i) => (
+          <li key={i}>{renderInline(it)}</li>
+        ))}
+      </ul>,
+    );
+    listBuf = [];
+  };
+  for (const raw of lines) {
+    const line = raw.replace(/\s+$/, '');
+    const listMatch = line.match(/^(\s*)[-*]\s+(.+)$/);
+    if (listMatch) {
+      listBuf.push(listMatch[2]);
+      continue;
+    }
+    flushList();
+    if (line.trim() === '') {
+      blocks.push(<div key={key++} className="h-2" />);
+      continue;
+    }
+    const h = line.match(/^(#{1,6})\s+(.+)$/);
+    if (h) {
+      const lvl = h[1].length;
+      const txt = h[2].replace(/^[\p{Emoji_Presentation}\p{Extended_Pictographic}]\s*/u, '');
+      const sizes = ['text-2xl', 'text-xl', 'text-lg', 'text-base', 'text-base', 'text-base'];
+      const margins = ['mt-6 mb-3', 'mt-5 mb-2', 'mt-4 mb-2', 'mt-3 mb-1', 'mt-3 mb-1', 'mt-3 mb-1'];
+      blocks.push(
+        <div
+          key={key++}
+          className={`font-serif font-bold text-[var(--color-primary)] ${sizes[lvl - 1]} ${margins[lvl - 1]}`}
+        >
+          {renderInline(txt)}
+        </div>,
+      );
+      continue;
+    }
+    blocks.push(
+      <p key={key++} className="leading-7 text-[var(--color-text)]">
+        {renderInline(line)}
+      </p>,
+    );
+  }
+  flushList();
+  return blocks;
+}
 
 const GRADES = ['초저', '초고', '중', '고'] as const;
 const SUBJECTS = ['국어', '수학', '영어', '사회', '과학'];
@@ -81,8 +154,8 @@ export default function CoteachPage() {
       </button>
 
       {output && (
-        <article className="card mt-6 whitespace-pre-wrap font-sans text-sm leading-7 animate-in">
-          {output}
+        <article className="card mt-6 font-sans text-[15px] animate-in">
+          {renderMarkdown(output)}
         </article>
       )}
     </div>
